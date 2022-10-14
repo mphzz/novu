@@ -8,7 +8,7 @@ export function GotAQuestionButton({ mt, size }: { mt: number; size: Size }) {
     return null;
   }
 
-  const { boot } = useIntercom();
+  const { show } = useIntercom();
 
   return (
     <Button mt={mt} size={size} onClick={boot}>

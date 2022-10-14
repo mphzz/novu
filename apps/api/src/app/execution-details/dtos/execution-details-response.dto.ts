@@ -1,6 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/shared';
+import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, StepTypeEnum } from '@novu/shared';
 
 export class ExecutionDetailsResponseDto {
   @ApiPropertyOptional()
@@ -27,19 +26,20 @@ export class ExecutionDetailsResponseDto {
   @ApiPropertyOptional()
   _messageId?: string;
 
-  @ApiProperty()
-  providerId: string;
+  @ApiPropertyOptional()
+  providerId?: string;
 
   @ApiProperty()
   transactionId: string;
 
   @ApiProperty({
-    enum: ChannelTypeEnum,
+    enum: StepTypeEnum,
   })
-  channel: ChannelTypeEnum;
+  channel?: StepTypeEnum;
 
   @ApiProperty()
   detail: string;
+
   @ApiProperty({
     enum: ExecutionDetailsSourceEnum,
   })

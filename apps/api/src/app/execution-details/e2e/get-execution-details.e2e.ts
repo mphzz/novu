@@ -1,5 +1,5 @@
-import { ExecutionDetailsRepository, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from '@novu/dal';
-import { ChannelTypeEnum } from '@novu/shared';
+import { ExecutionDetailsRepository } from '@novu/dal';
+import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, StepTypeEnum } from '@novu/shared';
 import { UserSession } from '@novu/testing';
 import axios from 'axios';
 import { expect } from 'chai';
@@ -26,7 +26,7 @@ describe('Execution details - Get execution details by notification id - /v1/exe
       _subscriberId: session.subscriberId,
       providerId: '',
       transactionId: 'transactionId',
-      channel: ChannelTypeEnum.EMAIL,
+      channel: StepTypeEnum.EMAIL,
       detail: '',
       source: ExecutionDetailsSourceEnum.INTERNAL,
       status: ExecutionDetailsStatusEnum.SUCCESS,
